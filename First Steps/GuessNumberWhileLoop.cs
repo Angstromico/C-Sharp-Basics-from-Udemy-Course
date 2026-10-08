@@ -13,7 +13,7 @@ namespace First_Steps
             int userGuess = 0;
             int tries = 0;
             Console.WriteLine("Welcome to the Guess the Number Game!");
-            Console.WriteLine("I have selected a number between 1 and 100. Try to guess it!");
+            Console.WriteLine("I have selected a number between 1 and 1000. Try to guess it!");
             while (userGuess != numberToGuess)
             {
                 Console.Write("Enter your guess: ");
