@@ -10,6 +10,11 @@
             // Implicit conversion from int to double
             double result = Add(intValue, doubleValue);
             Console.WriteLine($"Result of adding {intValue} and {doubleValue} is: {result}");
+
+            //Argument Promotion in Method Overloading
+            int intArg = 5;
+            double doubleArg = 10.5;
+            Console.WriteLine($"Result of adding {intArg} and {doubleArg} is: {Add(intArg, doubleArg)}");
         }
 
         private static double Add(double a, double b)
