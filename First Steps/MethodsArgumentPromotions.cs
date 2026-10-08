@@ -15,11 +15,24 @@
             int intArg = 5;
             double doubleArg = 10.5;
             Console.WriteLine($"Result of adding {intArg} and {doubleArg} is: {Add(intArg, doubleArg)}");
+
+            float myFloat = 10.5f;
+            PrintValue(myFloat); // Promoted to double
         }
 
         private static double Add(double a, double b)
         {
             return a + b;
+        }
+
+        private static void PrintValue(int value)
+        {
+            Console.WriteLine("Integer: " + value);
+        }
+
+        private static void PrintValue(double value)
+        {
+            Console.WriteLine("Double: " + value);
         }
     }
 }
