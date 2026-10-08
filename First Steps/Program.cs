@@ -22,6 +22,7 @@
             JaggedArrays.Run();
             MethodsArgumentPromotions.Run();
             MethodRefModifier.Run();
+            MethodOutModifier.Run();
 
             Console.ReadKey();
         }
