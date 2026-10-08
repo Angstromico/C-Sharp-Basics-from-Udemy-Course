@@ -8,7 +8,7 @@
             Console.WriteLine("Please enter a message: ");
             string? userMessage = Console.ReadLine();
             Console.WriteLine("You entered: " + userMessage);
-            
+
             CharsExamples.Run();
             Calculator.Run();
             Conversions.Run();
@@ -21,6 +21,7 @@
             TwoAndThreeDimensinalArraysExamples.Run();
             JaggedArrays.Run();
             MethodsArgumentPromotions.Run();
+            MethodRefModifier.Run();
 
             Console.ReadKey();
         }
