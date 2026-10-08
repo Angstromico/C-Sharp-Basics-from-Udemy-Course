@@ -18,6 +18,8 @@
 
             float myFloat = 10.5f;
             PrintValue(myFloat); // Promoted to double
+            int myInt = 42;
+            PrintValue(myInt); // Calls the int overload
         }
 
         private static double Add(double a, double b)
