@@ -23,6 +23,7 @@
             MethodsArgumentPromotions.Run();
             MethodRefModifier.Run();
             MethodOutModifier.Run();
+            MethodInModifier.Run();
 
             Console.ReadKey();
         }
