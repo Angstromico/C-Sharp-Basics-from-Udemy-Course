@@ -20,6 +20,7 @@
             GuessNumberWhileLoop.Run();
             TwoAndThreeDimensinalArraysExamples.Run();
             JaggedArrays.Run();
+            MethodsArgumentPromotions.Run();
 
             Console.ReadKey();
         }
