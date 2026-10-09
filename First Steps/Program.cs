@@ -27,6 +27,7 @@
             MethodRefModifier.Run();
             MethodOutModifier.Run();
             MethodInModifier.Run();
+            WeatherStationSimulator.Run();
 
             var program = new Program();
 
