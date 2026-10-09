@@ -28,6 +28,7 @@
             MethodOutModifier.Run();
             MethodInModifier.Run();
             WeatherStationSimulator.Run();
+            MixinNumbersTypesInCalculation.Run();
 
             var program = new Program();
 
