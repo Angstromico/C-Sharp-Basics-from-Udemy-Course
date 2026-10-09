@@ -20,6 +20,8 @@ namespace First_Steps
             string[] weatherConditions = new string[weekDays];
 
             Console.WriteLine("Forecast for the next days:");
+            double[] tempsInCelcius = new double[weekDays];
+            double[] tempsInFahrenheit = new double[weekDays];
             for (int i = 0; i < weekDays; i++)
             {
                 weatherConditions[i] = conditions[random.Next(conditions.Length)];
@@ -27,10 +29,14 @@ namespace First_Steps
                 // Random variation between -5 and +5 degrees relative to base temperature
                 int variation = random.Next(-5, 6);
                 temperatures[i] = celsius + variation;
+                tempsInCelcius[i] = temperatures[i];
                 double dayFahrenheit = (temperatures[i] * 9 / 5) + 32;
+                tempsInFahrenheit[i] = dayFahrenheit;
 
                 Console.WriteLine($"Day {i + 1}: Condition: {weatherConditions[i]}, Temperature: {temperatures[i]}°C ({dayFahrenheit:F1}°F)");
             }
+
+            DisplayAverageTemperature(tempsInCelcius, tempsInFahrenheit);
         }
 
         private static int ReadInt(string message)
@@ -65,6 +71,23 @@ namespace First_Steps
 
                 Console.WriteLine("Invalid input. Please enter a numeric value.");
             }
+        }
+
+        private static void DisplayAverageTemperature(double[] tempsInCelcius, double[] tempsInFahrenheit)
+        {
+            double averageTemperatureInCelcius = 0;
+            double averageTemperatureInFahrenheit = 0;
+            foreach (double temp in tempsInCelcius)
+            {
+                averageTemperatureInCelcius += temp;
+            }
+            averageTemperatureInCelcius /= tempsInCelcius.Length;
+            foreach (double temp in tempsInFahrenheit)
+            {
+                averageTemperatureInFahrenheit += temp;
+            }
+            averageTemperatureInFahrenheit /= tempsInFahrenheit.Length;
+            Console.WriteLine($"\nAverage Temperature: {averageTemperatureInCelcius:F1}°C ({averageTemperatureInFahrenheit:F1}°F)");
         }
 
 
