@@ -27,6 +27,7 @@ This prints `Hello, World!` to the console and waits for a key press before clos
 - `First Steps/Program.cs` - Main application code
 - `First Steps/First Steps.csproj` - .NET project file
 - `First Steps.slnx` - Solution file
+- `Select-Feature.ps1` - PowerShell utility to toggle and isolate feature tests in `Program.cs`
 
 ## Requirements
 
@@ -41,6 +42,42 @@ From the project root, run:
 
 ```bash
 dotnet run --project "First Steps/First Steps.csproj"
+```
+
+## Feature Testing Automation (PowerShell)
+
+As you add new topic files (e.g., `Calculator.cs`, `JaggedArrays.cs`), each topic has a corresponding `.Run()` call in `Program.cs`.
+
+To easily isolate and test one specific topic without running all previous exercises, use the included [`Select-Feature.ps1`](./Select-Feature.ps1) script:
+
+### 1. Test a single feature (comments out all others)
+Pass the name (or partial name) of the feature class:
+
+```powershell
+.\Select-Feature.ps1 Calculator
+```
+
+All other `.Run()` lines in `Program.cs` will be commented out, leaving only `Calculator.Run();` enabled.
+
+### 2. Select and run immediately
+Use the `-Run` switch to update `Program.cs` and launch `dotnet run` in one step:
+
+```powershell
+.\Select-Feature.ps1 JaggedArrays -Run
+```
+
+### 3. Uncomment all features
+Run the script without arguments (or with `all`) to restore and uncomment every `.Run()` call:
+
+```powershell
+.\Select-Feature.ps1
+```
+
+### 4. List all available features and their status
+Check which features are currently enabled `[x]` or commented out `[ ]`:
+
+```powershell
+.\Select-Feature.ps1 -List
 ```
 
 ## Learning Notes
