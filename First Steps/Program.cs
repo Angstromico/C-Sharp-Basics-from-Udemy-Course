@@ -2,6 +2,9 @@
 {
     class Program
     {
+
+        //Instance variable: 
+        int instanceVariable;
         static void Main(string[] args)
         {
             //Message
@@ -25,7 +28,20 @@
             MethodOutModifier.Run();
             MethodInModifier.Run();
 
+            var program = new Program();
+
+            Console.WriteLine($"Instance variable value before: {program.instanceVariable}");
+
+            program.IncreaseInstanceVariable();
+            Console.WriteLine($"Instance variable value after: {program.instanceVariable}");
+
             Console.ReadKey();
+        }
+
+        int IncreaseInstanceVariable()
+        {
+            instanceVariable++;
+            return instanceVariable;
         }
     }
 }
