@@ -37,6 +37,7 @@ namespace First_Steps
             }
 
             DisplayAverageTemperature(tempsInCelcius, tempsInFahrenheit);
+            DisplayForecast(weatherConditions, tempsInCelcius, tempsInFahrenheit);
         }
 
         private static int ReadInt(string message)
@@ -88,6 +89,15 @@ namespace First_Steps
             }
             averageTemperatureInFahrenheit /= tempsInFahrenheit.Length;
             Console.WriteLine($"\nAverage Temperature: {averageTemperatureInCelcius:F1}°C ({averageTemperatureInFahrenheit:F1}°F)");
+        }
+
+        private static void DisplayForecast(string[] weatherConditions, double[] tempsInCelcius, double[] tempsInFahrenheit)
+        {
+            Console.WriteLine("\nForecast for the next days:");
+            for (int i = 0; i < weatherConditions.Length; i++)
+            {
+                Console.WriteLine($"Day {i + 1}: Condition: {weatherConditions[i]}, Temperature: {tempsInCelcius[i]}°C ({tempsInFahrenheit[i]:F1}°F)");
+            }
         }
 
 

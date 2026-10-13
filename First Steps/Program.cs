@@ -12,23 +12,23 @@
             string? userMessage = Console.ReadLine();
             Console.WriteLine("You entered: " + userMessage);
 
-            CharsExamples.Run();
-            Calculator.Run();
-            Conversions.Run();
-            StringBinds.Run();
-            ReferencesEquals.Run();
-            RandomExample.Run();
-            SimpleCalculator.Run();
-            CountdownForLoop.Run();
-            GuessNumberWhileLoop.Run();
-            TwoAndThreeDimensinalArraysExamples.Run();
-            JaggedArrays.Run();
-            MethodsArgumentPromotions.Run();
-            MethodRefModifier.Run();
-            MethodOutModifier.Run();
-            MethodInModifier.Run();
+            // CharsExamples.Run();
+            // Calculator.Run();
+            // Conversions.Run12
+            // StringBinds.Run();
+            // ReferencesEquals.Run();
+            // RandomExample.Run();
+            // SimpleCalculator.Run();
+            // CountdownForLoop.Run();
+            // GuessNumberWhileLoop.Run();
+            // TwoAndThreeDimensinalArraysExamples.Run();
+            // JaggedArrays.Run();
+            // MethodsArgumentPromotions.Run();
+            // MethodRefModifier.Run();
+            // MethodOutModifier.Run();
+            // MethodInModifier.Run();
             WeatherStationSimulator.Run();
-            MixinNumbersTypesInCalculation.Run();
+            // MixinNumbersTypesInCalculation.Run();
 
             var program = new Program();
 
