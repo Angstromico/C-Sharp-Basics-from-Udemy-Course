@@ -27,8 +27,9 @@
             // MethodRefModifier.Run();
             // MethodOutModifier.Run();
             // MethodInModifier.Run();
-            WeatherStationSimulator.Run();
+            // WeatherStationSimulator.Run();
             // MixinNumbersTypesInCalculation.Run();
+            RecursionMethods.Run();
 
             var program = new Program();
 
