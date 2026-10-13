@@ -38,6 +38,7 @@ namespace First_Steps
 
             DisplayAverageTemperature(tempsInCelcius, tempsInFahrenheit);
             DisplayForecast(weatherConditions, tempsInCelcius, tempsInFahrenheit);
+            DisplayMaxAndMinTemperature(tempsInCelcius, tempsInFahrenheit);
         }
 
         private static int ReadInt(string message)
@@ -100,6 +101,24 @@ namespace First_Steps
             }
         }
 
-
+        private static void DisplayMaxAndMinTemperature(double[] tempsInCelcius, double[] tempsInFahrenheit)
+        {
+            double maxTempInCelcius = tempsInCelcius[0];
+            double minTempInCelcius = tempsInCelcius[0];
+            double maxTempInFahrenheit = tempsInFahrenheit[0];
+            double minTempInFahrenheit = tempsInFahrenheit[0];
+            foreach (double temp in tempsInCelcius)
+            {
+                if (temp > maxTempInCelcius) maxTempInCelcius = temp;
+                if (temp < minTempInCelcius) minTempInCelcius = temp;
+            }
+            foreach (double temp in tempsInFahrenheit)
+            {
+                if (temp > maxTempInFahrenheit) maxTempInFahrenheit = temp;
+                if (temp < minTempInFahrenheit) minTempInFahrenheit = temp;
+            }
+            Console.WriteLine($"\nMaximum Temperature: {maxTempInCelcius:F1}°C ({maxTempInFahrenheit:F1}°F)");
+            Console.WriteLine($"Minimum Temperature: {minTempInCelcius:F1}°C ({minTempInFahrenheit:F1}°F)");
+        }
     }
 }
