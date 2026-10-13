@@ -39,6 +39,7 @@ namespace First_Steps
             DisplayAverageTemperature(tempsInCelcius, tempsInFahrenheit);
             DisplayForecast(weatherConditions, tempsInCelcius, tempsInFahrenheit);
             DisplayMaxAndMinTemperature(tempsInCelcius, tempsInFahrenheit);
+            DisplayMostFrequentCondition(weatherConditions);
         }
 
         private static int ReadInt(string message)
@@ -119,6 +120,35 @@ namespace First_Steps
             }
             Console.WriteLine($"\nMaximum Temperature: {maxTempInCelcius:F1}°C ({maxTempInFahrenheit:F1}°F)");
             Console.WriteLine($"Minimum Temperature: {minTempInCelcius:F1}°C ({minTempInFahrenheit:F1}°F)");
+        }
+
+        private static void DisplayMostFrequentCondition(string[] weatherConditions)
+        {
+            var conditionCounts = new Dictionary<string, int>();
+
+            foreach (var condition in weatherConditions)
+            {
+                if (conditionCounts.ContainsKey(condition))
+                {
+                    conditionCounts[condition]++;
+                }
+                else
+                {
+                    conditionCounts[condition] = 1;
+                }
+            }
+
+            int maxCount = conditionCounts.Values.Max();
+
+            var mostFrequentConditions = conditionCounts
+                .Where(c => c.Value == maxCount);
+
+            Console.WriteLine("\nMost Frequent Condition(s):");
+
+            foreach (var condition in mostFrequentConditions)
+            {
+                Console.WriteLine($"{condition.Key} ({condition.Value} days)");
+            }
         }
     }
 }
